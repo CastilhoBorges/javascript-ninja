@@ -8,7 +8,7 @@ myvar = 10;
 var soma = 15 + 8;
 
 // Atribua à variável `soma` todo o valor dela, somando 1, usando o operador de soma abreviado.
-soma += 1;
+soma++;
 
 // Atribua à variável `soma` todo o valor dela, multiplicando por 3, usando o operador de multiplicação abreviado.
 soma *= 3;
@@ -23,13 +23,13 @@ var souninja = true
 var comida = ['arroz', 'feijão', 'ovo']
 
 // Digite a instrução que imprime o valor de 'feijao', que está na variável `comida`.
-comida[1]
+comida[1] // feijão 
 
 // Digite o código que verifica se a variável `soma' é igual a variável `myvar` (testando também o tipo).
-soma === myvar
+soma === myvar // false
 
 // Digite o código que verifica se a variável `myvar` é menor ou igual à variável `soma`.
-myvar <= soma 
+myvar <= soma // true 
 
 // Crie uma função chamada `divisao` que receba como parâmetro dois números, e retorne o resultado da divisão entre eles.
 function divisão(a, b) {
@@ -37,5 +37,5 @@ function divisão(a, b) {
 }
 
 // Invoque a função criada acima, passando os parâmetros 10 e 2.
-divisão(10, 2)
+divisão(10, 2) // 5 
 
