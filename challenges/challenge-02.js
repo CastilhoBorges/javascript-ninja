@@ -5,11 +5,10 @@ function soma(x, y) {
 console.log(soma(20, 30)); // 50 
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-var somas = soma(50, 50) + 5;
-console.log(somas)  
+var somaFunction = soma(50, 50) + 5;  
 
 // Qual o valor atualizado dessa variável?
-// 105
+console.log(somaFunction) // 105
 
 // Declare uma nova variável, sem valor.
 var semValor;
@@ -25,7 +24,7 @@ function addValor() {
 }
 
 // Invoque a função criada acima.
-addValor()
+console.log(addValor())
 
 // Qual o retorno da função? (Use comentários de bloco).
 /* 
@@ -42,7 +41,7 @@ Crie uma função com as seguintes características:
 function product(a, b, c) {
     if (a === undefined || b === undefined || c === undefined) {
         return 'Prencha todos os valores corretamente'
-    }
+    } 
 
     return (a * b * c) + 2
 }
@@ -69,22 +68,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function teste(a, b, c) {
-   if (b === undefined && c === undefined) {
-    return a 
-   } else if (c === undefined) {
-    return a + b 
-   } else if (a, b ,c) {
-    return (a + b) / c
-   } else if (a === undefined || b === undefined || c === undefined) {
-    return 'false'
+   if (a !== undefined && b === undefined && c === undefined) {
+        return a 
+   } else if (a !== undefined && b !== undefined && c === undefined) {
+        return a + b 
+   } else if (a !== undefined && b !== undefined && c !== undefined) {
+        return (a + b) / c
+   } else if (a === undefined && b === undefined && c === undefined) {
+        return false
    } else {
-    return 'null'
+        return 'null'
    }
 }
 
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-console.log(teste(20))
-console.log(teste(20, 20))
-console.log(teste(30, 30, 4))
-console.log(teste())
+console.log(teste(20)) // 20  
+console.log(teste(20, 20)) // 40  
+console.log(teste(30, 30, 4)) // 15  
+console.log(teste()) // false
+console.log(teste(undefined, 10, undefined)) // null 
+
