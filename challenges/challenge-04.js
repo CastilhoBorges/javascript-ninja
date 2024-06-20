@@ -4,16 +4,34 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-
+var isTruthy = function(a) {
+    return a ? true : false;
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-
+console.log(isTruthy(''));
+console.log(isTruthy(""));
+console.log(isTruthy(0));
+console.log(isTruthy(null));
+console.log(isTruthy(undefined))
+console.log(isTruthy(NaN))
+console.log(isTruthy(false))
+console.log(isTruthy(-0))
 
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-
+console.log(isTruthy(1))
+console.log(isTruthy(2))
+console.log(isTruthy(3))
+console.log(isTruthy(4))
+console.log(isTruthy(5))
+console.log(isTruthy(6))
+console.log(isTruthy(7))
+console.log(isTruthy(8))
+console.log(isTruthy(9))
+console.log(isTruthy(10))
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -139,12 +157,14 @@ console.log(carro.pessoaEntrando(2)); // Já temos 2 pessoas no carro!
 console.log(carro.pessoaEntrando(4)); // O carro já está lotado!
 
 // Faça o carro encher.
-console.log(carro.pessoaEntrando(6));
+console.log(carro.pessoaEntrando(3));
 
 // Tire 4 pessoas do carro.
-console.log(carro.pessoaEntrando(0));
+console.log(carro.quantidadePessoas -= 4);
+console.log(carro)
 
 // Adicione 10 pessoas no carro.
-
+console.log(carro.pessoaEntrando(10))
 
 // Quantas pessoas temos no carro?
+console.log(carro) // 1 
