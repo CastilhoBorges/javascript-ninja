@@ -112,17 +112,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.pessoaEntrando = function(pessoas) { 
-    carro.quantidadePessoas += pessoas
-    
-    if (carro.quantidadePessoas > 5) {
-        carro.quantidadePessoas = carro.quantidadePessoas - pessoas
-        return `O carro já está lotado!`;
-    } else if (carro.quantidadePessoas < 5 && pessoas > (5 - carro.quantidadePessoas)) {
-        return `Só cabem mais ${5 - carro.quantidadePessoas} pessoas!`;
+    var totalPessoas = carro.quantidadePessoas += pessoas
+    if (carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos) {
+        return `O carro já esta lotado`;
     } 
 
+    if (totalPessoas > carro.assentos) {
+        var pessoasCabem = carro.assentos - carro.quantidadePessoas;
+        var plural = pessoasCabem === 1 ? 'pessoa' : 'pessoas'
+        return `Só cabem mais ${pessoasCabem} ${plural}!`
+    }
+    
+    carro.quantidadePessoas += pessoas; 
     return `Já temos ${carro.quantidadePessoas} pessoas no carro!`;
-}
+};
     
 
 /*
@@ -154,17 +157,16 @@ console.log(carro.obterMarcaModelo()); // Esse carro é um Porshe GT 911
 console.log(carro.pessoaEntrando(2)); // Já temos 2 pessoas no carro!
 
 // Adicione mais 4 pessoas no carro.
-console.log(carro.pessoaEntrando(4)); // O carro já está lotado!
+console.log(carro.pessoaEntrando(4)); 
 
 // Faça o carro encher.
-console.log(carro.pessoaEntrando(3));
+console.log(carro.pessoaEntrando());
 
 // Tire 4 pessoas do carro.
-console.log(carro.quantidadePessoas -= 4);
-console.log(carro)
+
 
 // Adicione 10 pessoas no carro.
-console.log(carro.pessoaEntrando(10))
+console.log()
 
 // Quantas pessoas temos no carro?
-console.log(carro) // 1 
+console.log() // 1 
