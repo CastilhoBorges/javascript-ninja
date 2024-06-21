@@ -71,7 +71,7 @@ function book(nameBook){
         }
     };
 
-    return !nameBook ? allBooks : allBooks[nameBook]
+    return !nameBook ? allBooks : allBooks[nameBook];
 
 }
 
