@@ -14,7 +14,7 @@ function myArr(arr) {
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-console.log(myArr(arr)[1])
+console.log(myArr(arr)[1]);
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -23,20 +23,20 @@ no primeiro parâmetro. O índice usado para retornar o valor, deve ser o númer
 segundo parâmetro.
 */
 function newFunc(arr, numero) {
-    numero = arr[2]
-    return numero
-}
+    numero = arr[2];
+    return numero;
+} 
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-let newVar = ['lolo', 6, 9, 7, undefined]
+let newVar = ['lolo', 6, 9, 7, undefined];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(newFunc(newVar))
+console.log(newFunc(newVar));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -52,63 +52,53 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book(nameBook){
-    let booksNames = {
-        book1:{
-            qunatidadePaginas: 400,
-            autor: 'Charles Duhigg',
-            editor: 'Objetiva'
+function book(nameBook){    
+    let allBooks = {
+        'book 1': {
+            pagesNumbers: 159,
+            author: 'João',
+            companyPublisher: 'NBA'
         },
-        book2:{
-            qunatidadePaginas: 230,
-            autor: 'Dale Carnegie',
-            editor: 'Alguma ai'
+        'book 2': {
+            pagesNumbers: 309,
+            author: 'Carlos',
+            companyPublisher: 'Betano'
         },
-        book3:{
-            qunatidadePaginas: 180,
-            autor: 'John',
-            editor: 'Outra ai'
+        'book 3': {
+            pagesNumbers: 239,
+            author: 'Robert',
+            companyPublisher: 'Fé'
         }
-    }
+    };
 
-    if (nameBook === undefined) {
-        return booksNames
-    }
+    return !nameBook ? allBooks : allBooks[nameBook]
 
-    if (nameBook == 'book1'){
-        nameBook = booksNames.book1
-        return nameBook
-    } else if (nameBook == 'book2') {
-        nameBook = booksNames.book2
-        return nameBook
-    } else if (nameBook == 'book3') {
-        nameBook = booksNames.book3
-        return nameBook
-    }
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-console.log(book())
+console.log(book());
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-
+console.log(`O livro book 2 tem ${book('book 2').pagesNumbers} páginas!`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+let bookName3 = 'book 3'
+console.log(`O autor do livro ${bookName3} é ${book(bookName3).author}.`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+let bookName1 = 'book 1'
+console.log(`O livro ${bookName1} foi publicado pela editora ${book(bookName1).companyPublisher}.`)
